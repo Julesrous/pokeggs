@@ -1,0 +1,4 @@
+<% @pokeggs.each do |pokemon| %>
+  <%= link_to pokemon.name, pokegg_path(pokemon.id) %>
+ <% end %>
+

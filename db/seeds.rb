@@ -9,9 +9,9 @@ Purchase.destroy_all
 Pokegg.destroy_all
 User.destroy_all
 
-user_1 = User.create(first_name: 'Sacha', last_name: 'Ketchen', gender: 'male', region: 'Kanto', experience: 'very high')
-user_2 = User.create(first_name: 'Ondine', last_name: 'Ketchen', gender: 'female', region: 'Kanto', experience: 'very high')
-user_3 = User.create(first_name: 'Aurore', last_name: 'Féli-cité', gender: 'female', region: 'Sinnoh', experience: 'good')
+user_1 = User.create(first_name: 'Sacha', last_name: 'Ketchen', gender: 'male', region: 'Kanto', experience: 'very high', email: 'sacha@pokemon.pok', password: 'azerty')
+user_2 = User.create(first_name: 'Ondine', last_name: 'Ketchen', gender: 'female', region: 'Kanto', experience: 'very high', email: 'ondine@pokemon.pok', password: 'azerty')
+user_3 = User.create(first_name: 'Aurore', last_name: 'Féli-cité', gender: 'female', region: 'Sinnoh', experience: 'good', email: 'aurore@pokemon.pok', password: 'azerty')
 p "users created"
 
 pokegg_1 = Pokegg.new(name: 'Pikachu', category: 'Electricity', birthday: '10th February 2021', region: 'Kanto', state: 'Very good')
