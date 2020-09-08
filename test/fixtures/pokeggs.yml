@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  birthday: 2020-09-08
+  region: MyString
+  state: MyText
+  user: one
+
+two:
+  name: MyString
+  category: MyString
+  birthday: 2020-09-08
+  region: MyString
+  state: MyText
+  user: two

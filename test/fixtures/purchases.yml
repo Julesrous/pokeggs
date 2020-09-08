@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price_pokegg: 1
+  transport_type: MyString
+  transport_time: 1
+  date_arriving: 2020-09-08
+  transport_price: 1
+  total_price: 1
+  user: one
+  pokegg: one
+
+two:
+  price_pokegg: 1
+  transport_type: MyString
+  transport_time: 1
+  date_arriving: 2020-09-08
+  transport_price: 1
+  total_price: 1
+  user: two
+  pokegg: two
