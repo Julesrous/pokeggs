@@ -1,1 +1,108 @@
-<%= @pokegg.name %>
+<div class="container-show-pokegg">
+  <div class="pokegg-name">
+    <h1><%= @pokegg.name %></h1>
+  </div>
+  <div class="pokegg-image">
+    <%= cl_image_tag @pokegg.photo.key, height: 200, width: 300, crop: :fill%>
+  </div>
+  <div class="pokegg-birthday">
+    This pokemon will born at this date: <%= @pokegg.birthday %>
+  </div>
+  <div class="pokegg-state">
+    State of the pokegg: <%= @pokegg.state %>!
+  </div>
+  <div class="pokegg-type">
+    <% if @pokegg.category == "Feu"  %>
+        <div class="pokegg-feu-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Eau"%>
+        <div class="pokegg-eau-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Plante" %>
+        <div class="pokegg-plante-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Insecte" %>
+        <div class="pokegg-insecte-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Electricité"  %>
+        <div class="pokegg-electricite-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Roche"  %>
+        <div class="pokegg-roche-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Sol"  %>
+        <div class="pokegg-sol-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Dragon"  %>
+        <div class="pokegg-dragon-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Fée" %>
+        <div class="pokegg-fee-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Ténèbre" %>
+        <div class="pokegg-tenebre-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Spectre"  %>
+        <div class="pokegg-spectre-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Psy" %>
+        <div class="pokegg-psy-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Normal" %>
+        <div class="pokegg-normal-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Combat"  %>
+        <div class="pokegg-combat-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Glace" %>
+        <div class="pokegg-glace-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Poison"  %>
+        <div class="pokegg-poison-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% elsif @pokegg.category == "Vol" %>
+        <div class="pokegg-vol-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+      <% else %>
+        <div class="pokegg-acier-card my-3 px-1">
+          <%= @pokegg.category %>
+        </div>
+    <% end %>
+  </div>
+  <div class="pokegg-region-user">
+    <div>
+      <% if @pokegg.user.id == @user.id %>
+        This is your <%= @pokegg.name %> egg! As you know, this pokegg comes from <%= @pokegg.region %>!
+      <%else %>
+        This egg belongs to <%= @pokegg.user.first_name %>!
+        <% if @pokegg.region == @user.region %>
+          It comes from <%= @pokegg.region %>! The same region as you!
+        <% else %>
+          It comes from <%= @pokegg.region %>! That is far from <%= @user.region %>!
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= form_tag orders_path do %>
+  <%= hidden_field_tag 'pokegg_id', @pokegg.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
+</div>
+

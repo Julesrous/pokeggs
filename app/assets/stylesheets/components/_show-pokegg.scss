@@ -1,0 +1,25 @@
+.pokegg-name h1 {
+font-weight: bold;
+color: #375a9e;
+}
+
+.container-show-pokegg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokegg-region-user .btn {
+  color: #facc33;
+  background-color: #375a9e;
+  font-weight: bold;
+  border-color: #375a9e;
+  margin-top: 10px;
+}
+
+.pokegg-region-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

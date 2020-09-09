@@ -5,6 +5,7 @@ class PokeggsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @pokegg = Pokegg.all.find(params["id"])
     authorize @pokegg
   end
@@ -25,7 +26,7 @@ class PokeggsController < ApplicationController
   private
 
    def pokegg_params
-    params.require(:pokegg).permit(:name, :category, :region, :state)
+    params.require(:pokegg).permit(:name, :category, :region, :state, :price, :photo)
   end
 
 end

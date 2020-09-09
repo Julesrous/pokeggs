@@ -1,0 +1,13 @@
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "Index", pokeggs_path %>
+  <%= link_to "Create", new_pokegg_path, class: "mx-3" %>
+  <% if user_signed_in?%>
+  <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-current-user"  %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <%= link_to "my profile", user_path(current_user.id) %>
+    <% else %>
+    <p>connexion</p>
+  <% end %>
+
+</div>
+
