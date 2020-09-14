@@ -23,10 +23,29 @@ class PokeggsController < ApplicationController
     redirect_to pokeggs_path
   end
 
+  def edit
+    @pokegg = Pokegg.find(params[:id])
+    authorize @pokegg
+  end
+
+  def update
+    @pokegg = Pokegg.find(params[:id])
+    @pokegg.update(pokegg_params)
+    authorize @pokegg
+    redirect_to pokegg_path(@pokegg)
+  end
+
+  def destroy
+    @pokegg = Pokegg.find(params[:id])
+    authorize @pokegg
+    @pokegg.destroy
+    redirect_to pokeggs_path
+  end
+
   private
 
    def pokegg_params
-    params.require(:pokegg).permit(:name, :category, :region, :state, :price, :photo)
+    params.require(:pokegg).permit(:name, :category, :region, :birthday, :state, :price, :available, :photo)
   end
 
 end

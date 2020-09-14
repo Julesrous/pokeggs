@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 5.6.1'
+gem 'font-awesome-sass', '~> 5.13.0'
 gem 'simple_form'
 
 gem 'pundit'

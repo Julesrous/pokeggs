@@ -4,7 +4,25 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name,
+                placeholder: 'Sacha',
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "first name" }%>
+    <%= f.input :last_name,
+                placeholder: 'Ketchen',
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "last name" }%>
+   <%= f.input :gender, as: :radio_buttons, collection: ['Boy', 'Girl'], required: true %>
+    <%= f.input :region, as: :radio_buttons , collection: ['Kanto', 'Johto', 'Hoenne', 'Sinnoh'], required: true %>
+    <%= f.input :experience,
+                placeholder: 'Tell your experiences as a pokemon dressor...',
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "experience" }%>
     <%= f.input :email,
+                placeholder: 'sacha@pokemon.pok',
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>

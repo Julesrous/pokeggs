@@ -14,7 +14,15 @@ class PokeggPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    record.user == user
+  end
+
+def update?
+    record.user == user
+end
+
+ def destroy?
+    record.user == user
   end
 
 end

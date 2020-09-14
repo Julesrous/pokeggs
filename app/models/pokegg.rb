@@ -1,6 +1,7 @@
 class Pokegg < ApplicationRecord
   belongs_to :user
   monetize :price_cents
+  has_many :orders, dependent: :destroy
   has_one_attached :photo
   validates :name, inclusion: {in: %w(Name Bulbizarre Salamèche Carapuce Chenipan Aspicot Roucool Rattata Piafabec Abo Pikachu Sabelette Nidoran Goupix Nosferapti Mystherbe Paras Mimitoss Taupiqueur Miaouss Psykokwak Férosinge Caninos Ptitard Abra Machoc Chétiflor Tentacool Racaillou Ponyta Ramoloss Magnéti Canarticho Doduo Otaria Tadmorv Kokiyas Fantominus Onix Soporifik Krabby Voltorbe Nœunœuf Osselait Excelangue Smogo Rhinocorne Saquedeneu Kangourex Hypotrempe Poissirène Stari Insécateur Scarabrute Tauros Magicarpe Lokhlass Métamorph Évoli Porygon Artikodin Électhor Sulfura Minidraco Mewtwo Mew Germignon Héricendre Kaiminus Fouinette Hoothoot Coxy Mimigal Loupio Pichu Mélo Toudoudou Togepi Natu Wattouat Granivol Capumain
 Tournegrin Yanma Axoloto Cornèbre Feuforêve Zarbi Girafarig Pomdepik Insolourdo Scorplane Snubbull Qwilfish Caratroc Scarhino Farfuret Teddiursa Limagma Marcacrin Corayon Rémoraid Cadoizo Airmure Malosse Phanpy Cerfrousse Queulorior Debugant Kapoera Lippouti Élekid Magby Écrémeuh Raikou Entei Suicune Embrylex Lugia Ho-Oh Celebi
@@ -14,5 +15,16 @@ validates :category, inclusion: {in: %w(Feu Eau Plante Insecte Electricité Roch
 validates :region, inclusion: {in: %w(Kanto Johto Hoenne Sinnoh),
   message: "%{value} is not a valid region"
 }
+
+validate :birthday_before_today
+
+private
+
+def birthday_before_today
+  if birthday < Date.today
+      errors.add(:birthday, "can't be before today")
+  end
+end
+
 
 end
